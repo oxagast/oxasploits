@@ -60,7 +60,7 @@ foreach my $value (@modules) {
 @nmap[2] =~ m/.*OS: (\w+) /;
 my $os = $1;
 my $los = lc($os);
-my$handler = 2000;;
+my $handler = 2000;;
 my $fh;
 open($fh, ">", "masspwn.msf");
 foreach(@umods) {
