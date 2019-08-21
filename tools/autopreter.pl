@@ -75,7 +75,7 @@ foreach(@umods) {
 }
 print($fh "jobs -K\n");
 print($fh "sessions\n");
-system("./msfconsole -r masspwn.$randnum.msf");
+system("./msfconsole -r masspwn.$pid.msf");
 unlink("masspwn.$pid.msf");
 unlink("masspwn.$pid.nmap");
 exit(0);
