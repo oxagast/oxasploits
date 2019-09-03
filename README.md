@@ -3,34 +3,52 @@
 Most of these CVEs are accreddited to oxagast as well
 
 
-### CVE-2006-3392
+## ansvif
+This is a fuzzer, written in C++, designed to find bugs in C/C++ programs.
+
+
+##  MAPDAV
+This is a tool for building wordlists out of things known about a user.
+
+
+## all_suid.sh
+This tool creates a list of all suid 0 executables from apt archives.
+
+
+## autopreter.pl
+A tool that builds metasploit resource scripts from nmap scans.
+
+
+## CVE-2006-3392
 ### Webmin <=1.29 remote root exploit
 This exploit, lifts a Webmin cookie with a directory transversal and
 aritrary read exploit, then reuses the cookie to use an authenticated
 user exploit to get root remotely.
 
 
-### CVE-2010-2626
+## CVE-2010-2626
 ### Perl pipe upload and shell for Miyabi CGI Tools <=1.02 and iOffice 0.1
 This exploit uploads a perl program via buggy perl open reads (|).  After
 pushing the program it chmods and spawns a shell.  Should work
 regaurdless if the server is firewalled or not.
 
 
-### CVE-2016-10401
+## CVE-2016-10401
 ### PK5001Z router remote root exploit
 Uses known telnet user and root pass to log in as root.
 
 
-### CVE-2018-17336
+## CVE-2018-17336
 ### UDisks <=2.8.0 DoS
 This is example code that crashes udisks2 via malformed filesystem label
 that when mounted then logged a string format vulnerability exists allowing
 arbitrary read/write of memory as root.
 
 
-### CVE-2019-12881
+## CVE-2019-12881
 ### Linux Kernel 4.15.x i915 driver NULL pointer dereference
 This code demonstrates crafted ioctl calls to the i915 garphics
 driver that allow overwrite of CR2 register in kernel space triggering
 a NULL pointer dereference.
+
+
