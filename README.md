@@ -52,3 +52,9 @@ driver that allow overwrite of CR2 register in kernel space triggering
 a NULL pointer dereference.
 
 
+## CVE-2019-15947
+### Bitcoin Core bitcoin-qt wallet.dat recoverable from .core dump
+This exploit recovers wallet.dat's that were loaded at the time of a crash 
+from bitcoin-qt .core crash dump files by grepping for a magic string at 
+the beginning of the wallet, calculating the offset, then reconstructing 
+the wallet.dat(s) with xxd.
