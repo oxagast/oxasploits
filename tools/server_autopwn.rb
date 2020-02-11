@@ -10,15 +10,13 @@ class MetasploitModule < Msf::Auxiliary
   include Msf::Auxiliary::Report
   include Msf::Auxiliary::Scanner
   include Msf::Session::Scriptable
-
-    if File.file?("./msfexec.rc")
-          File.delete("./msfexec.rc")
-            end
-      open('msfexec.rc', 'a') { |f|
-            f.puts("back")
-                f.puts("set ExitOnSession false")
-                 }
-
+  if File.file?("./msfexec.rc")
+    File.delete("./msfexec.rc")
+  end
+  open('msfexec.rc', 'a') { |f|
+    f.puts("back")
+    f.puts("set ExitOnSession false")
+  }
  def initialize(info = {})
     super(update_info(info,
       'Name'        => 'server_autopwn',
@@ -49,8 +47,8 @@ class MetasploitModule < Msf::Auxiliary
       ])
   $handler = 2000
   $sploit_count = 0
-  $port_count = 0;
-  $done = 0;
+  $port_count = 0
+  $done = 0
 
   deregister_options('RPORT')
       end
