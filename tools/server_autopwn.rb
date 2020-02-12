@@ -5,6 +5,7 @@
 
 require 'msf/base/sessions/scriptable'
 require 'msf/base'
+
 class MetasploitModule < Msf::Auxiliary
   include Msf::Exploit::Remote::Tcp
   include Msf::Auxiliary::Report
@@ -48,7 +49,6 @@ class MetasploitModule < Msf::Auxiliary
   $handler = 2000
   $sploit_count = 0
   $port_count = 0
-  $done = 0
 
   deregister_options('RPORT')
       end
@@ -171,11 +171,7 @@ class MetasploitModule < Msf::Auxiliary
           end
         end
       end
-    if $port_count < 1
-      print_error("Sorry, no exploits added.  Are there open ports?")
-
     end
-      end
     # kill jobs and then list sessions
     open('msfexec.rc', 'a') { |f|
       f.puts("sleep #{datastore['EXPLOIT_TIMEOUT']}")
@@ -186,6 +182,12 @@ class MetasploitModule < Msf::Auxiliary
     if $sploit_count > 0
     print_good("#{$sploit_count} exploits added to resource file... good.")
     print_good("Now run 'resource msfexec.rc' to exploit hosts...")
+    end
+    if $sploit_count == 0
+      print_error("Sorry, no exploits added.  Are there open ports?")
+      if File.file?("./msfexec.rc")
+         File.delete("./msfexec.rc")
+      end     
     end
   end                   
 end 
