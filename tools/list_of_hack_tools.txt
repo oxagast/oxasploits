@@ -23,4 +23,6 @@ gcc
 g++
 ruby
 ssl-strip
+burpsuite
+ffuf
 
