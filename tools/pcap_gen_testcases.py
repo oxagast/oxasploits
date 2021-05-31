@@ -27,5 +27,5 @@ def parse_pcap(pcap_path):
             out = open(dport_dir + "/pcap.data_packet" + num + ".dat", "wb")
             out.write(raw_d)
             s = s + 1
-parse_pcap("/home/marshall/capture.pcapng")
+parse_pcap("capture.pcapng")
 os.system("find . -empty -type f -delete")
