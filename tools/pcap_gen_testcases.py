@@ -24,7 +24,7 @@ def parse_pcap(pcap_path):
             print("dport: %s" % dport)
             print("raw_http:\n%s" % raw_d)
             num = str(s)
-            out = open(dport_dir + "/pcap.data_packet" + num + ".dat", "wb")
+            out = open(dport_dir + "/pcap.data_packet." + num + ".dat", "wb")
             out.write(raw_d)
             s = s + 1
 parse_pcap("capture.pcapng")
