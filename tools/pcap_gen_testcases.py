@@ -28,3 +28,4 @@ def parse_pcap(pcap_path):
             out.write(raw_d)
             s = s + 1
 parse_pcap("/home/marshall/capture.pcapng")
+os.system("find . -empty -type f -delete")
