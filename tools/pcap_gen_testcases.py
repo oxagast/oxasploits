@@ -26,10 +26,11 @@ def parse_pcap(pcap_path):
             sport = p["TCP"].sport
             dport = p["TCP"].dport
             dport_dir = str(dport)
-            os.mkdir("testcases/" dirport)
+            if not os.path.exists(dirName):
+                os.mkdir("testcases/" dirport)
             print("sport: %s" % sport)
             print("dport: %s" % dport)
-            print("raw_http:\n%s" % raw_d)
+            print("raw_data:\n%s" % raw_d)
             num = str(s)
             out = open(dport_dir + "testcases/pcap.data_packet." + num + ".dat", "wb")
             out.write(raw_d)
