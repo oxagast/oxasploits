@@ -58,3 +58,8 @@ This exploit recovers wallet.dat's that were loaded at the time of a crash
 from bitcoin-qt .core crash dump files by grepping for a magic string at 
 the beginning of the wallet, calculating the offset, then reconstructing 
 the wallet.dat(s) with xxd.
+
+## CVE-2017-5816
+### HP iMC dbman.exe PLAT 7.3 command injection exploit
+Incorrect santization of input leads to a remote code execution vulnerabilty 
+within dbman.exe of the HP iMC PLAT 7.3 suite.  Code execs with SYSTEM privileges.
