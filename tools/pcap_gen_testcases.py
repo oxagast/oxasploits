@@ -1,6 +1,6 @@
 # oxagast
 # use:
-#   capture packets to ~/testcases/, you can save them here with wireshark.
+#   tcpdump -w ~/capture.pcap 'port 9000'
 #   python3 pcap_gen_testcases.py ~/capture.pcap
 # this will create a directory of each destination port filled with files each the data section
 # of the packets in the pcap file.  One packet is one file.  TCP header info is stripped.
