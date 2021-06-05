@@ -1,7 +1,7 @@
 # oxagast
 # use:
 #   capture packets to ~/testcases/, you can save them here with wireshark.
-#   python3 pcap_gen_testcases.py ~/capture.pcap
+#   mkdir testcases; cd testcases; python3 ../pcap_gen_testcases.py
 # this will create a directory of each destination port filled with files each the data section
 # of the packets in the pcap file.  One packet is one file.  TCP header info is stripped.
 
@@ -27,13 +27,13 @@ def parse_pcap(pcap_path):
             sport = p["TCP"].sport
             dport = p["TCP"].dport
             dport_dir = str(dport)
-            if not os.path.exists("testcases/" + dirport):
-                os.mkdir("testcases/" + dirport)
+            if not os.path.exists("testcases/" + dport_dir):
+                os.mkdir("testcases/" + dport_dir)
             print("sport: %s" % sport)
             print("dport: %s" % dport)
             print("raw_data:\n%s" % raw_d)
             num = str(s)
-            out = open(dport_dir + "testcases/pcap.data_packet." + num + ".dat", "wb")
+            out = open("testcases/" + dport_dir + "/pcap.data_packet." + num + ".dat", "wb")
             out.write(raw_d)
             s = s + 1
 if not os.path.exists("testcases"):
