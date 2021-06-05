@@ -6,6 +6,7 @@
 # of the packets in the pcap file.  One packet is one file.  TCP header info is stripped.
 
 import os
+import sys
 import scapy_http.http
 try:
     import scapy.all as scapy
@@ -26,8 +27,8 @@ def parse_pcap(pcap_path):
             sport = p["TCP"].sport
             dport = p["TCP"].dport
             dport_dir = str(dport)
-            if not os.path.exists(dirName):
-                os.mkdir("testcases/" dirport)
+            if not os.path.exists("testcases/" + dirport):
+                os.mkdir("testcases/" + dirport)
             print("sport: %s" % sport)
             print("dport: %s" % dport)
             print("raw_data:\n%s" % raw_d)
@@ -35,6 +36,7 @@ def parse_pcap(pcap_path):
             out = open(dport_dir + "testcases/pcap.data_packet." + num + ".dat", "wb")
             out.write(raw_d)
             s = s + 1
-os.mkdir("testcases")
+if not os.path.exists("testcases"):
+    os.mkdir("testcases")
 parse_pcap(sys.argv[1])
 os.system("find testcases/ -empty -type f -delete")
