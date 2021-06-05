@@ -36,5 +36,5 @@ def parse_pcap(pcap_path):
             out.write(raw_d)
             s = s + 1
 os.mkdir("testcases")
-parse_pcap("capture.pcapng")
+parse_pcap(sys.argv[1])
 os.system("find testcases/ -empty -type f -delete")
