@@ -1,17 +1,18 @@
 mkdir f;
 :floop for (;;) {
   for ($i = 0; $i -le 9; $i++) {
-    .\radamsa.exe test.jpeg -o f\"$i.jpeg";
+    .\radamsa.exe sample.mp4 -o f\"$i.mp4";
   }
-  $files = Get-ChildItem "C:\fuzz\f\*.jpeg"
+  $files = Get-ChildItem "C:\fuzz\f\*.mp4"
   foreach ($f in $files){
-    mspaint $f;
+    & 'C:\Program Files\VideoLAN\VLC\vlc.exe' $f;
     $ret = $LastExitCode;
-    echo "$f Exit was: $ret : $?";
-    if ($ret -ne 0) {
+    $tf = $?;
+    echo "$f Exit was: $ret : $tf";
+    if ($tf -ne "True") {
       break floop;
     }
-    sleep 1;
-    Stop-Process -name "mspaint"
+    sleep 3;
+    Stop-Process -name "vlc"
   }
 }
