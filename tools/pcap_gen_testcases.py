@@ -29,9 +29,9 @@ def parse_pcap(pcap_path):
             dport_dir = str(dport)
             if not os.path.exists("testcases/" + dport_dir):
                 os.mkdir("testcases/" + dport_dir)
-            print("sport: %s" % sport)
-            print("dport: %s" % dport)
-            print("raw_data:\n%s" % raw_d)
+#            print("sport: %s" % sport)
+#            print("dport: %s" % dport)
+#            print("raw_data:\n%s" % raw_d)
             num = str(s)
             out = open("testcases/" + dport_dir + "/pcap.data_packet." + num + ".dat", "wb")
             out.write(raw_d)
