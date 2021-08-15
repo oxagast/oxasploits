@@ -8,7 +8,6 @@
 
 import os
 import sys
-import scapy_http.http
 try:
     import scapy.all as scapy
 except ImportError:
