@@ -18,8 +18,11 @@ if (!(Test-Path "f"))
     & $apppath $f;
     $ret = $LastExitCode;
     $tf = $?;
-    echo "$f Exit was: $ret : $tf";
+    echo "$apppath $f - Exit was: $ret : $tf";
     if ($tf -ne "True") {
+      echo "Crash detected ret $ret with file $f";
+      $rand = Get-Random -Minimum 10000 -Maximum 99999;
+      move $f $rand.crash.$f;
       break floop;
     }
     sleep 6;
