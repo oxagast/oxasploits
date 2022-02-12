@@ -63,3 +63,10 @@ the wallet.dat(s) with xxd.
 ### HP iMC dbman.exe PLAT 7.3 command injection exploit
 Incorrect santization of input leads to a remote code execution vulnerabilty 
 within dbman.exe of the HP iMC PLAT 7.3 suite.  Code execs with SYSTEM privileges.
+
+## CVE-2021-3560
+### Polkit and dbus race conditon LPE exploit
+A race condition exists in polkit where if you send dbus messages, then
+kill the process midway through, incorrect permissions are set on users that were
+never intended to be able to be created, with system priviledges.  This leads to
+local root compromise.
