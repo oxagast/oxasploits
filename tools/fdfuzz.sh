@@ -1,4 +1,4 @@
-while 1
+while [ 42 ]
 do
 rm open_fd fd
 for i in $(ps aux | awk '//{print $2}')
