@@ -1,5 +1,7 @@
-# File descriptor fuzzer
-# this will trash things around the system, do not run unless in a VM
+# Marshall Whittaker / oxagast
+# A small file descriptor fuzzer.
+# IMPORTANTL: This will trash things around the system, do not run unless it's contained in a VM.
+
 while [ 42 ];
   do rm open_fd fd;
   for i in $(ps aux | awk '//{print $2}');
