@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 # Marshall Whittaker / oxagast
 # A small file descriptor fuzzer.
-# IMPORTANTL: This will trash things around the system, do not run unless it's contained in a VM.
+# IMPORTANT: This will trash things around the system, do not run unless it's contained in a VM.
+#
 
 pn=$1;
 if [[ $# -gt 0 ]]; then
@@ -23,10 +24,10 @@ if [[ $# -gt 0 ]]; then
   done;
   rm open_fd fd 2>/dev/null;
   else
-    echo "You need to supply a program name to fuzz."
+    echo "The program specified needs to be running and have open file descriptors."
     exit 1;
   fi;
 else
-  echo "The program specified needs to be running and have open file descriptors."
+  echo "You need to supply a program name to fuzz.";
   exit 1
 fi;
