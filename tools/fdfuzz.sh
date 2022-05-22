@@ -3,19 +3,30 @@
 # A small file descriptor fuzzer.
 # IMPORTANTL: This will trash things around the system, do not run unless it's contained in a VM.
 
-pn=$1
-echo $pn;
-rm open_fd fd;
-while true;
-  do
-  for proc in $(ps aux | grep $pn | awk '//{print $2}');
-    do find /proc/$proc/fd/ >> open_fd 2>/dev/null;
-  done;
-  for fd in $(cat open_fd | grep fd/[[:digit:]] | grep -v $$);
+pn=$1;
+if [[ $# -gt 0 ]]; then
+  echo "Fuzzing file descriptors of $pn";
+  if [[ $(pgrep -x $pn | wc -l) -gt 0 ]]; then
+    rm open_fd fd;
+    while true;
     do
-    printf "%s%s%s%s%s" > $fd;
-    dd if=/dev/urandom bs=4 count=256 > $fd;
-    if [[ $(pgrep -x $pn | wc -l) -lt 1 ]]; then rm open_fd fd; exit; fi;
+    for proc in $(ps aux | grep $pn | awk '//{print $2}');
+    do
+      find /proc/$proc/fd/ >> open_fd 2>/dev/null;
+    done;
+    for fd in $(cat open_fd | grep fd/[[:digit:]] | grep -v $$);
+    do
+      printf "%s%s%s%s%s" > $fd;
+      dd if=/dev/urandom bs=4 count=256 > $fd;
+      if [[ $(pgrep -x $pn | wc -l) -lt 1 ]]; then rm open_fd fd; exit; fi;
+    done;
   done;
-done;
-rm open_fd fd 2>/dev/null;
+  rm open_fd fd 2>/dev/null;
+  else
+    echo "You need to supply a program name to fuzz."
+    exit 1;
+  fi;
+else
+  echo "The program specified needs to be running and have open file descriptors."
+  exit 1
+fi;
