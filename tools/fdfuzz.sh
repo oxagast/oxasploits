@@ -17,8 +17,8 @@ if [[ $# -gt 0 ]]; then
     done;
     for fd in $(cat open_fd | grep fd/[[:digit:]] | grep -v $$);
     do
-      printf "%s%s%s%s%s" > $fd;
-      dd if=/dev/urandom bs=4 count=256 > $fd;
+      dd if=/dev/urandom bs=4 count=256 > junk.dat;
+      cat junk.dat > $fd;
       if [[ $(pgrep -x $pn | wc -l) -lt 1 ]]; then rm open_fd fd; exit; fi;
     done;
   done;
