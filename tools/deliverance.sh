@@ -3,6 +3,9 @@
 # A small file descriptor fuzzer.
 # IMPORTANT: This will trash things around the system, do not run unless it's contained in a VM.
 #
+# Deliverance
+# noun
+#  1. the action of being rescued or set free.
 
 pn=$1;
 if [[ $# -gt 0 ]]; then
