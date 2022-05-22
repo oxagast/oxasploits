@@ -6,6 +6,10 @@
 # Deliverance
 # noun
 #  1. the action of being rescued or set free.
+#
+# Useage: ./deliverance.sh firefox
+# Note: Some processes will spin off other processes, for example with skype, you need to use
+# skypeforlinux as the program name to fuzz, as that is how it shows up in ps/pgrep.
 
 pn=$1;
 if [[ $# -gt 0 ]]; then
