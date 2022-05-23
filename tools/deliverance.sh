@@ -10,8 +10,9 @@
 # Useage: ./deliverance.sh firefox
 # Note: Some processes will spin off other processes, for example with skype, you need to use
 # skypeforlinux as the program name to fuzz, as that is how it shows up in ps/pgrep.
-
+blksize=256;
 pn=$1;
+
 if [[ $# -gt 0 ]]; then
   echo "Fuzzing file descriptors of $pn";
   if [[ $(pgrep -x $pn | wc -l) -gt 0 ]]; then
@@ -24,9 +25,16 @@ if [[ $# -gt 0 ]]; then
     done;
     for fd in $(cat open_fd | grep fd/[[:digit:]] | grep -v $$);
     do
-      dd if=/dev/urandom bs=4 count=256 > junk.dat;
+      dd if=/dev/urandom bs=$blksize count=1 > junk.dat 2>/dev/null;
+      cp junk.dat junk.`date +%s`.dat
       cat junk.dat > $fd;
-      if [[ $(pgrep -x $pn | wc -l) -lt 1 ]]; then rm open_fd fd; exit; fi;
+      find -type f  -type f -name "*.dat" -mmin +2 -exec rm {} +
+      if [[ $(pgrep -x $pn | wc -l) -lt 1 ]]; then
+        rm open_fd fd;
+        echo "Last used $blksize byte fuzz data:"
+        hexdump -C junk.dat;
+        exit;
+      fi;
     done;
   done;
   rm open_fd fd 2>/dev/null;
