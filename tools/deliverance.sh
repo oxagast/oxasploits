@@ -10,15 +10,15 @@
 # Useage: ./deliverance.sh firefox
 # Note: Some processes will spin off other processes, for example with skype, you need to use
 # skypeforlinux as the program name to fuzz, as that is how it shows up in ps/pgrep.
+
 blksize=256;
+
 pn=$1;
 
-if [[ $# -gt 0 ]]; then
-  echo "Fuzzing file descriptors of $pn";
-  if [[ $(pgrep -x $pn | wc -l) -gt 0 ]]; then
-    rm open_fd fd;
-    while true;
-    do
+fuzz () {
+  rm open_fd fd;
+  while true;
+  do
     for proc in $(ps aux | grep $pn | awk '//{print $2}');
     do
       find /proc/$proc/fd/ >> open_fd 2>/dev/null;
@@ -38,6 +38,12 @@ if [[ $# -gt 0 ]]; then
     done;
   done;
   rm open_fd fd 2>/dev/null;
+}
+
+if [[ $# -gt 0 ]]; then
+  if [[ $(pgrep -x $pn | wc -l) -gt 0 ]]; then
+    echo "Fuzzing file descriptors of $pn";
+    fuzz
   else
     echo "The program specified needs to be running and have open file descriptors."
     exit 1;
@@ -46,3 +52,4 @@ else
   echo "You need to supply a program name to fuzz.";
   exit 1
 fi;
+
