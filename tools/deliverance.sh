@@ -11,8 +11,6 @@
 # Note: Some processes will spin off other processes, for example with skype, you need to use
 # skypeforlinux as the program name to fuzz, as that is how it shows up in ps/pgrep.
 
-blksize=256;
-
 pn=$1;
 
 fuzz () {
@@ -45,7 +43,12 @@ fuzz () {
   rm open_fd fd 2>/dev/null;
 }
 
+
 if [[ $# -gt 0 ]]; then
+if [[ $# -eq 2 ]]; then 
+blksize=$2;
+else blksize=256;
+fi;
   if [[ $(pgrep -x $pn | wc -l) -gt 0 ]]; then
     echo "Fuzzing file descriptors of $pn";
     fuzz
@@ -57,4 +60,3 @@ else
   echo "You need to supply a program name to fuzz.";
   exit 1
 fi;
-
