@@ -23,6 +23,7 @@ fuzz () {
     do
       find /proc/$proc/fd/ >> open_fd 2>/dev/null;
     done;
+    pid=$(pgrep $pn);
     for fd in $(cat open_fd | grep fd/[[:digit:]] | grep -v $$);
     do
       dd if=/dev/urandom bs=$blksize count=1 > junk.dat 2>/dev/null;
@@ -31,7 +32,11 @@ fuzz () {
       find -type f  -type f -name "*.dat" -mmin +2 -exec rm {} +
       if [[ $(pgrep -x $pn | wc -l) -lt 1 ]]; then
         rm open_fd fd;
-        echo "Last used $blksize byte fuzz data:"
+        echo "Code: $pn";
+        echo "PID List:"
+        echo "$pid";
+        echo "Last used payload size: $blksize bytes";
+        echo "Fuzz data:";
         hexdump -C junk.dat;
         exit;
       fi;
