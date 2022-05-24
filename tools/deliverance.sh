@@ -45,10 +45,10 @@ fuzz () {
 
 
 if [[ $# -gt 0 ]]; then
-if [[ $# -eq 2 ]]; then 
-blksize=$2;
-else blksize=256;
-fi;
+  if [[ $# -eq 2 ]]; then 
+    blksize=$2;
+  else blksize=256;
+  fi;
   if [[ $(pgrep -x $pn | wc -l) -gt 0 ]]; then
     echo "Fuzzing file descriptors of $pn";
     fuzz
