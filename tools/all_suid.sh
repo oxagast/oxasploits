@@ -1,9 +1,8 @@
-mkdir debtmp;
-cd debtmp;
+#!/bin/bash
+# Leaves a list of an entire repository's SUID binaries in deb_suid_root.txt.
 PKG=$(apt-cache search . | cut -f 1 -d ' ');
-echo $PKG | xargs apt-get download;
-DEB=(`find *.deb`);
-for i in ${DEB[@]};
-do dpkg -c $i | cut -c 4- | grep ^s | cut -f 2 -d '.' ; done | tee deb_suid_root.txt
-cd ..;
-rm -rf debtmp;
+for i in ${PKG[@]}; do
+ apt-get download $i;
+dpkg -c *.deb | cut -c 4- | grep ^s | cut -f 2 -d '.' | tee -a deb_suid_root.txt
+rm *.deb
+done
