@@ -2,6 +2,8 @@
 ## A number of exploits written by oxagast
 Most of these CVEs are accreddited to oxagast as well
 
+![oxasploits](oxasploits-logo.jpg)
+
 
 ## ansvif
 This is a fuzzer, written in C++, designed to find bugs in C/C++ programs.
