@@ -4,22 +4,7 @@ Most of these CVEs are accreddited to oxagast as well
 
 ![oxasploits](oxasploits-logo.jpg)
 
-
-## ansvif
-This is a fuzzer, written in C++, designed to find bugs in C/C++ programs.
-
-
-##  MAPDAV
-This is a tool for building wordlists out of things known about a user.
-
-
-## all_suid.sh
-This tool creates a list of all suid 0 executables from apt archives.
-
-
-## autopreter.pl
-A tool that builds metasploit resource scripts from nmap scans.
-
+# CVEs and PoC code
 
 ## CVE-2006-3392
 ### Webmin <=1.29 remote root exploit
@@ -72,3 +57,39 @@ A race condition exists in polkit where if you send dbus messages, then
 kill the process midway through, incorrect permissions are set on users that were
 never intended to be able to be created, with system priviledges.  This leads to
 local root compromise.
+
+## RougeTooth
+### Abusing Bluetooth HCI_EVT and HID control codes on a Samsung Galaxy S8
+If you can get an unsuspecting user to connect to an attacking machine, by
+maquorading it as a speaker (or whatever), you can inject HID codes and take
+control over the device, to the extent where you can blindly pop a shell if
+termux is installed, al-la rubber-ducky style.  Working PoC and video included.
+
+## WoahIsRead
+### OpenSSH 9.2 SSHd banner symbolic link LPE
+OpenSSHd 9.2 and below do not properly check permissions and ownership on files
+used as banners.  If the banner is set to a user writeable file, this allows an
+attacker to remove the file, create a symbolic link to any root-only readable file
+on the system (like /etc/shadow for example), and it will be dumped on next
+connection to the sshd daemon.  Successful login to sshd is not required for this
+to work.
+
+______________________________________________________________________________
+
+# Tools
+
+
+## ansvif
+This is a fuzzer, written in C++, designed to find bugs in C/C++ programs.
+
+
+##  MAPDAV
+This is a tool for building wordlists out of things known about a user.
+
+
+## all_suid.sh
+This tool creates a list of all suid 0 executables from apt archives.
+
+
+## autopreter.pl
+A tool that builds metasploit resource scripts from nmap scans.
