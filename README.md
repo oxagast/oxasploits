@@ -2,7 +2,7 @@
 ## A number of exploits written by oxagast
 Most of these CVEs are accreddited to oxagast as well
 
-![oxasploits](oxasploits-logo.jpg)
+![oxasploits](https://raw.githubusercontent.com/oxagast/oxasploits/JoshuaJohnWard/oxasploits.logo.nobg.png)
 
 # CVEs and PoC code
 
