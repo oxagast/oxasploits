@@ -1,0 +1,15 @@
+* make liberal use of translator tools on forign code
+* reuse working code if possible, saves time and effort
+* burpsuite
+! make sure if trying to set up older software try to set it up on an operating system made for software in that same time frame.... for example: software from 2019? ubuntu 19.04.
+* take notes as you go!
+* commit often!
+* to pinpoint if a page queried cooresponds to right piece of code, you can delete (or move, not delete) the file and then try to nagigate to it and see if the app crashes or throws missing err
+! remember to read over code twice before submitting, and then if you're unsure, read over it again
+! mistakes are ok, its part of learning
+* remember to add check routines to exploits to see if its even the right vuln software
+? just make it dump core and start plugging things randomly in places around the core dump
+* what does a system call look like in asm? look for that
+! what do things like execl and system() look like (objdump? gdb?)
+* try to jump around jump jump jump around jmp
+* pull already there code to pivot around and make what you need
