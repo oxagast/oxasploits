@@ -1,6 +1,6 @@
 # oxasploits
 ## A number of exploits written by oxagast
-Most of these CVEs are accreddited to oxagast as well
+Most of these CVEs are accreddited to oxagast as well<br>
 Contact: <a href="malito:marshall@oxasploits.com">Marshall Whittaker</a>
 <p align="center">
 <img src="https://raw.githubusercontent.com/oxagast/oxasploits/JoshuaJohnWard/oxasploits.logo.nobg.png" alt="Logo">
