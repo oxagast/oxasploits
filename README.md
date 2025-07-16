@@ -1,7 +1,7 @@
 # oxasploits
 ## A number of exploits written by oxagast
 Most of these CVEs are accreddited to oxagast as well<br>
-Contact: <a href="malito:marshall@oxasploits.com">Marshall Whittaker</a>
+Contact: Marshall Whittaker marshall@oxasploits.com
 <p align="center">
 <img src="https://raw.githubusercontent.com/oxagast/oxasploits/JoshuaJohnWard/oxasploits.logo.nobg.png" alt="Logo">
 </p>
@@ -74,6 +74,32 @@ attacker to remove the file, create a symbolic link to any root-only readable fi
 on the system (like /etc/shadow for example), and it will be dumped on next
 connection to the sshd daemon.  Successful login to sshd is not required for this
 to work.
+
+## Mount Dup UUID
+### A zero day in duplicate UUID overlays in mount (LPE)
+You can create a filesystem with a suid bin on a file, formatted with a UUID
+that is a duplicate of one already pointed to in /etc/fstab, assuming the fs
+is mounted using user,suid,exec you will be able to run a shell on the mount
+point for LPE to root.
+
+## CVE-2023-38941
+### RCE in django proxy manager, in good_create module
+You can abuse the eval function on django sspanel to obtain RCE as root.  This
+is a Metasploit module.
+
+## CVE-2023-48251
+### The Boche Netrunner Smart Pnumatic Torque Wrench
+This IoT device has firmware with a hardcoded root password.  You can ssh into
+the dropbear instance as root with a null password. This is a Metasploit module.
+
+## CVE-2024-23828
+### NginxUI API RCE as root
+In NginxUI the API gives an authenticated user the ability to add/modify a
+command that should be attached to the webapp's term tab as it's controlling
+terminal.  You can change this from a login binary to something like sh or bash
+and then hook the websocket instance that is spawned to control the webapp's
+terminal, and hook a root shell.  This is a Metasploit module.
+
 
 ______________________________________________________________________________
 
