@@ -103,8 +103,7 @@ terminal, and hook a root shell.  This is a Metasploit module.
 
 ______________________________________________________________________________
 
-<code>
------BEGIN PGP PUBLIC KEY BLOCK-----
+<code>-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQINBGepWGUBEADBpS+F8S3YQOrZ+ymA21NzzXnTEXFYsC07RAmLm+pJIvSOiRO4
 8Q4/Ozext4I9p0KxPsM9j6y8Edqh54ZXopk94RGC7N4NZe7H6x2lWGG366Iz2Jj2
@@ -193,6 +192,5 @@ aNAmRNnO3iB4hyQtIYEt//4NS85vEbVFjJqVbnKKKYMRXxfTnZNZU4Y9TTxtv3XA
 0bseHHoyaYhxpvyq7uNmV/fm7ZL9VvvTe62k6rKpFcJH4Ya46ssDmDL7P9UXX3t7
 a5U6ZIpEuuZ1rvPsiOcOI9sMNlNlrham7lRD6uQWbfDy
 =PxXt
------END PGP PUBLIC KEY BLOCK-----
-</code>
+-----END PGP PUBLIC KEY BLOCK-----</code>
 
