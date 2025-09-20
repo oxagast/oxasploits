@@ -1,0 +1,4 @@
+you could maybe totally bypass a firewall by piggybacking virtualbox, writing some code
+that acts like it's an operating system being used from within virtualbox, and uses a
+network bridge to let you listen on any port on a totally seperate IP address that can
+be aquried either statically or dynamically (dhcp), but pushes commands to the host OS.
