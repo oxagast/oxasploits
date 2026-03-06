@@ -100,6 +100,13 @@ terminal.  You can change this from a login binary to something like sh or bash
 and then hook the websocket instance that is spawned to control the webapp's
 terminal, and hook a root shell.  This is a Metasploit module.
 
+## CVE-2026-24479
+### HustOJ Authenticated drop php in webroot via zipslip RCE
+A user with administrative privileges can abuse the problem_import_qduoj.php CGI script
+using a crafted zip file (zip-slip) to traverse backwards through the filesystem to the
+webroot, where they can extract a PHP file containing a shell to get full RCE in the
+context of the webserver.
+
 
 ______________________________________________________________________________
 
