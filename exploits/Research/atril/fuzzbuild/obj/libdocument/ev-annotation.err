@@ -1,0 +1,22 @@
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-annotation.c: In function ‘ev_annotation_set_property’:
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-annotation.c:195:17: warning: ‘ev_annotation_set_color’ is deprecated: Use 'ev_annotaion_set_rgba' instead [-Wdeprecated-declarations]
+  195 |                 ev_annotation_set_color (annot, g_value_get_pointer (value));
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/marshall/Projects/atril-hack/atril/libdocument/ev-annotation.c:24:
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-annotation.h:142:22: note: declared here
+  142 | gboolean             ev_annotation_set_color                 (EvAnnotation           *annot,
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-annotation.c: In function ‘ev_annotation_get_property’:
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-annotation.c:225:17: warning: ‘ev_annotation_get_color’ is deprecated: Use 'ev_annotaion_get_rgba' instead [-Wdeprecated-declarations]
+  225 |                 ev_annotation_get_color (annot, &color);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-annotation.h:139:22: note: declared here
+  139 | void                 ev_annotation_get_color                 (EvAnnotation           *annot,
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-annotation.c: In function ‘ev_annotation_set_color’:
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-annotation.c:587:5: warning: ‘ev_annotation_get_color’ is deprecated: Use 'ev_annotaion_get_rgba' instead [-Wdeprecated-declarations]
+  587 |     ev_annotation_get_color (annot, &annot_color);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-annotation.c:549:1: note: declared here
+  549 | ev_annotation_get_color (EvAnnotation *annot,
+      | ^~~~~~~~~~~~~~~~~~~~~~~

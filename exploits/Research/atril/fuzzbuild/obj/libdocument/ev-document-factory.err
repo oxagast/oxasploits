@@ -1,0 +1,8 @@
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-document-factory.c: In function ‘ev_document_factory_add_filters’:
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-document-factory.c:365:17: warning: ‘ev_backends_manager_get_document_type_info’ is deprecated [-Wdeprecated-declarations]
+  365 |                 info = ev_backends_manager_get_document_type_info (document);
+      |                 ^~~~
+In file included from /home/marshall/Projects/atril-hack/atril/libdocument/ev-document-factory.c:32:
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-backends-manager.h:48:14: note: declared here
+   48 | EvTypeInfo  *ev_backends_manager_get_document_type_info   (EvDocument  *document);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

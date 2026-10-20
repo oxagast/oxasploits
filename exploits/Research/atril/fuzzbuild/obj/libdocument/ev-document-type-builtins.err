@@ -1,0 +1,187 @@
+In file included from /usr/include/glib-2.0/glib/gthread.h:34,
+                 from /usr/include/glib-2.0/glib/gasyncqueue.h:34,
+                 from /usr/include/glib-2.0/glib.h:34,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:30,
+                 from /usr/include/glib-2.0/glib-object.h:24,
+                 from gen/ev-document-type-builtins.h:12,
+                 from gen/ev-document-type-builtins.c:6:
+gen/ev-document-type-builtins.c: In function ‘ev_annotation_type_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:14:7: note: in expansion of macro ‘g_once_init_enter’
+   14 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_annotation_text_icon_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:35:7: note: in expansion of macro ‘g_once_init_enter’
+   35 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_annotation_text_markup_type_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:62:7: note: in expansion of macro ‘g_once_init_enter’
+   62 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_document_layout_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:85:7: note: in expansion of macro ‘g_once_init_enter’
+   85 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_document_mode_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:108:7: note: in expansion of macro ‘g_once_init_enter’
+  108 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_document_ui_hints_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:131:7: note: in expansion of macro ‘g_once_init_enter’
+  131 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_document_permissions_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:155:7: note: in expansion of macro ‘g_once_init_enter’
+  155 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_document_info_fields_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:177:7: note: in expansion of macro ‘g_once_init_enter’
+  177 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_document_error_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:214:7: note: in expansion of macro ‘g_once_init_enter’
+  214 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_form_field_text_type_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:236:7: note: in expansion of macro ‘g_once_init_enter’
+  236 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_form_field_button_type_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:256:7: note: in expansion of macro ‘g_once_init_enter’
+  256 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_form_field_choice_type_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:276:7: note: in expansion of macro ‘g_once_init_enter’
+  276 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_link_action_type_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:297:7: note: in expansion of macro ‘g_once_init_enter’
+  297 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_link_dest_type_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:322:7: note: in expansion of macro ‘g_once_init_enter’
+  322 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_selection_style_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:351:7: note: in expansion of macro ‘g_once_init_enter’
+  351 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_transition_effect_type_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:373:7: note: in expansion of macro ‘g_once_init_enter’
+  373 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_transition_effect_alignment_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:402:7: note: in expansion of macro ‘g_once_init_enter’
+  402 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c: In function ‘ev_transition_effect_direction_get_type’:
+/usr/include/glib-2.0/glib/gatomic.h:131:5: warning: argument 2 of ‘__atomic_load’ discards ‘volatile’ qualifier [-Wdiscarded-qualifiers]
+  131 |     __atomic_load (gapg_temp_atomic, &gapg_temp_newval, __ATOMIC_SEQ_CST); \
+      |     ^~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/gthread.h:274:7: note: in expansion of macro ‘g_atomic_pointer_get’
+  274 |     (!g_atomic_pointer_get (location) &&                             \
+      |       ^~~~~~~~~~~~~~~~~~~~
+gen/ev-document-type-builtins.c:421:7: note: in expansion of macro ‘g_once_init_enter’
+  421 |   if (g_once_init_enter (&g_define_type_id__volatile)) {
+      |       ^~~~~~~~~~~~~~~~~

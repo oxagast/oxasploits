@@ -1,0 +1,10 @@
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-document-misc.c: In function ‘ev_document_misc_paint_one_page’:
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-document-misc.c:165:9: warning: ‘gtk_style_context_get_background_color’ is deprecated: Use 'gtk_render_background' instead [-Wdeprecated-declarations]
+  165 |         gtk_style_context_get_background_color (context, state, &bg);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/gtk-3.0/gtk/gtkicontheme.h:27,
+                 from /usr/include/gtk-3.0/gtk/gtk.h:127,
+                 from /home/marshall/Projects/atril-hack/atril/libdocument/ev-document-misc.c:27:
+/usr/include/gtk-3.0/gtk/gtkstylecontext.h:1201:6: note: declared here
+ 1201 | void gtk_style_context_get_background_color (GtkStyleContext *context,
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

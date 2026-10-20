@@ -1,0 +1,8 @@
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-backends-manager.c: In function ‘ev_backends_manager_get_document’:
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-backends-manager.c:233:17: warning: ‘g_module_build_path’ is deprecated [-Wdeprecated-declarations]
+  233 |                 path = g_module_build_path (backends_dir(), info->module_name);
+      |                 ^~~~
+In file included from /home/marshall/Projects/atril-hack/atril/libdocument/ev-backends-manager.c:23:
+/usr/include/glib-2.0/gmodule.h:142:23: note: declared here
+  142 | gchar*                g_module_build_path    (const gchar  *directory,
+      |                       ^~~~~~~~~~~~~~~~~~~

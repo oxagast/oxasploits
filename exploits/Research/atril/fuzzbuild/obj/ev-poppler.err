@@ -1,0 +1,49 @@
+/home/marshall/Projects/atril-hack/atril/backend/pdf/ev-poppler.cc: In function ‘cairo_region_t* pdf_selection_get_selection_region(EvSelection*, EvRenderContext*, EvSelectionStyle, EvRectangle*)’:
+/home/marshall/Projects/atril-hack/atril/backend/pdf/ev-poppler.cc:1970:52: warning: ‘GList* poppler_page_get_selection_region(PopplerPage*, gdouble, PopplerSelectionStyle, PopplerRectangle*)’ is deprecated: Use poppler_page_get_selected_region instead [-Wdeprecated-declarations]
+ 1970 |         region = poppler_page_get_selection_region (poppler_page,
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+ 1971 |                                                     1.0,
+      |                                                     ~~~~
+ 1972 |                                                     (PopplerSelectionStyle)style,
+      |                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1973 |                                                     (PopplerRectangle *) points);
+      |                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/marshall/Projects/atril-hack/deps/usr/include/poppler/glib/poppler.h:358,
+                 from /home/marshall/Projects/atril-hack/atril/backend/pdf/ev-poppler.cc:27:
+/home/marshall/Projects/atril-hack/deps/usr/include/poppler/glib/poppler-page.h:91:8: note: declared here
+   91 | GList *poppler_page_get_selection_region(PopplerPage *page, gdouble scale, PopplerSelectionStyle style, PopplerRectangle *selection) G_GNUC_DEPRECATED_FOR(poppler_page_get_selected_region);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/marshall/Projects/atril-hack/atril/backend/pdf/ev-poppler.cc: In function ‘cairo_region_t* pdf_document_text_get_text_mapping(EvDocumentText*, EvPage*)’:
+/home/marshall/Projects/atril-hack/atril/backend/pdf/ev-poppler.cc:2007:52: warning: ‘GList* poppler_page_get_selection_region(PopplerPage*, gdouble, PopplerSelectionStyle, PopplerRectangle*)’ is deprecated: Use poppler_page_get_selected_region instead [-Wdeprecated-declarations]
+ 2007 |         region = poppler_page_get_selection_region (poppler_page, 1.0,
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+ 2008 |                                                     POPPLER_SELECTION_GLYPH,
+      |                                                     ~~~~~~~~~~~~~~~~~~~~~~~~
+ 2009 |                                                     &points);
+      |                                                     ~~~~~~~~
+/home/marshall/Projects/atril-hack/deps/usr/include/poppler/glib/poppler-page.h:91:8: note: declared here
+   91 | GList *poppler_page_get_selection_region(PopplerPage *page, gdouble scale, PopplerSelectionStyle style, PopplerRectangle *selection) G_GNUC_DEPRECATED_FOR(poppler_page_get_selected_region);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/marshall/Projects/atril-hack/atril/backend/pdf/ev-poppler.cc: In function ‘EvAnnotation* ev_annot_from_poppler_annot(PopplerAnnot*, EvPage*)’:
+/home/marshall/Projects/atril-hack/atril/backend/pdf/ev-poppler.cc:2749:41: warning: ‘gboolean ev_annotation_set_color(EvAnnotation*, const GdkColor*)’ is deprecated: Use 'ev_annotaion_set_rgba' instead [-Wdeprecated-declarations]
+ 2749 |                 ev_annotation_set_color (ev_annot, &color);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+In file included from /home/marshall/Projects/atril-hack/atril/libdocument/ev-document-annotations.h:31,
+                 from /home/marshall/Projects/atril-hack/atril/backend/pdf/ev-poppler.cc:51:
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-annotation.h:142:22: note: declared here
+  142 | gboolean             ev_annotation_set_color                 (EvAnnotation           *annot,
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~
+/home/marshall/Projects/atril-hack/atril/backend/pdf/ev-poppler.cc: In function ‘void pdf_document_annotations_add_annotation(EvDocumentAnnotations*, EvAnnotation*, EvRectangle*)’:
+/home/marshall/Projects/atril-hack/atril/backend/pdf/ev-poppler.cc:2967:33: warning: ‘void ev_annotation_get_color(EvAnnotation*, GdkColor*)’ is deprecated: Use 'ev_annotaion_get_rgba' instead [-Wdeprecated-declarations]
+ 2967 |         ev_annotation_get_color (annot, &color);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-annotation.h:139:22: note: declared here
+  139 | void                 ev_annotation_get_color                 (EvAnnotation           *annot,
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~
+/home/marshall/Projects/atril-hack/atril/backend/pdf/ev-poppler.cc: In function ‘void pdf_document_annotations_save_annotation(EvDocumentAnnotations*, EvAnnotation*, EvAnnotationsSaveMask)’:
+/home/marshall/Projects/atril-hack/atril/backend/pdf/ev-poppler.cc:3051:41: warning: ‘void ev_annotation_get_color(EvAnnotation*, GdkColor*)’ is deprecated: Use 'ev_annotaion_get_rgba' instead [-Wdeprecated-declarations]
+ 3051 |                 ev_annotation_get_color (annot, &ev_color);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+/home/marshall/Projects/atril-hack/atril/libdocument/ev-annotation.h:139:22: note: declared here
+  139 | void                 ev_annotation_get_color                 (EvAnnotation           *annot,
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~

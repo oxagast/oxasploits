@@ -1,0 +1,8 @@
+# generated seed corpora (regenerate with gen_*_seeds.py)
+seeds/
+seeds_images/
+# fuzz output: mutants, logs, deduped crashes
+out/
+out_images/
+out_pdfimg/
+__pycache__/
